@@ -1,0 +1,21 @@
+description: |
+  Install the terraform command-line using tfenv(https://github.com/tfutils/tfenv)
+
+usage:
+  version: 2.1
+
+  orbs:
+    terraform: ukslee/terraform@x.y.z
+
+  jobs:
+    build:
+      docker:
+        - image: your-image
+      steps:
+        - checkout
+        - terraform/install
+  
+  workflows:
+    your-workflow:
+      jobs:
+        - build
