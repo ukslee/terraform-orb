@@ -1,0 +1,17 @@
+description: |
+  Install the terraform command-line using tfenv(https://github.com/tfutils/tfenv)
+
+parameters:
+  tf_version:
+    type: string
+    description: Terraform version to install
+
+steps:
+  - run:
+      name: "Install tfenv"
+      command: |
+        export tf_version=<<parameters.tf_version>>
+        git clone https://github.com/tfutils/tfenv ~/.tfenv
+        export PATH="$HOME/.tfenv/bin:$PATH"
+        tfenv install $tf_version
+        tfenv use $tf_version

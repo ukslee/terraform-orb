@@ -1,0 +1,5 @@
+version: 2.1
+
+description: |
+  Install and run specified terraform command-line.
+  View this orb's source: https://github.com/ukslee/terraform-orb
