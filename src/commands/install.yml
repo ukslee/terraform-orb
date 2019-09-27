@@ -5,6 +5,7 @@ parameters:
   tf_version:
     type: string
     description: Terraform version to install
+    default: "0.12.9"
 
 steps:
   - run:
