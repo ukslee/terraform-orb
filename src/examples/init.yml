@@ -1,0 +1,21 @@
+description: |
+  run terraform init
+
+usage:
+  version: 2.1
+
+  orbs:
+    terraform: ukslee/terraform@x.y.z
+
+  jobs:
+    build:
+      docker:
+        - image: your-image
+      steps:
+        - checkout
+        - terraform/init
+
+  workflows:
+    your-workflow:
+      jobs:
+        - build
