@@ -93,6 +93,7 @@ workflows:
       # trigger-integration-workflow job's source)
       - orb-tools/dev-promote-prod:
           name: dev-promote-patch
+          context: orb
           orb-name: ukslee/terraform
           requires:
             - integration-tests-master
@@ -104,6 +105,7 @@ workflows:
 
       - orb-tools/dev-promote-prod:
           name: dev-promote-minor
+          context: orb
           release: minor
           orb-name: ukslee/terraform
           requires:
@@ -116,6 +118,7 @@ workflows:
 
       - orb-tools/dev-promote-prod:
           name: dev-promote-major
+          context: orb
           release: major
           orb-name: ukslee/terraform
           requires:
