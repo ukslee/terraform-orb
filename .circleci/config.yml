@@ -135,5 +135,4 @@ jobs:
     executor: alpine
     steps:
       - checkout
-      - terraform/install:
-          tf_version: "0.12.9"
+      - terraform/install
