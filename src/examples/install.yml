@@ -14,7 +14,7 @@ usage:
       steps:
         - checkout
         - terraform/install
-  
+
   workflows:
     your-workflow:
       jobs:
