@@ -136,4 +136,4 @@ jobs:
       - checkout
       - tfutils/install
       - tfutils/terraform:
-          arguments: --version
+          arguments: workspace list
