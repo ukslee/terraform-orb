@@ -1,9 +1,8 @@
 version: 2.1
-description: a orb for terraform cli
 
 orbs:
   orb-tools: circleci/orb-tools@8.27.4
-  terraform: ukslee/terraform@dev:alpha
+  tfutils: ukslee/tfutils@dev:alpha
 
 executors:
   alpine:
@@ -30,7 +29,7 @@ workflows:
       # if using Contexts, add your context below
       - orb-tools/publish-dev:
           context: orb
-          orb-name: ukslee/terraform
+          orb-name: ukslee/tfutils
           requires:
             - orb-tools/pack
 
@@ -94,7 +93,7 @@ workflows:
       - orb-tools/dev-promote-prod:
           name: dev-promote-patch
           context: orb
-          orb-name: ukslee/terraform
+          orb-name: ukslee/tfutils
           requires:
             - integration-tests-master
           filters:
@@ -107,7 +106,7 @@ workflows:
           name: dev-promote-minor
           context: orb
           release: minor
-          orb-name: ukslee/terraform
+          orb-name: ukslee/tfutils
           requires:
             - integration-tests-master
           filters:
@@ -120,7 +119,7 @@ workflows:
           name: dev-promote-major
           context: orb
           release: major
-          orb-name: ukslee/terraform
+          orb-name: ukslee/tfutils
           requires:
             - integration-tests-master
           filters:
@@ -135,4 +134,4 @@ jobs:
     executor: alpine
     steps:
       - checkout
-      - terraform/install
+      - tfutils/install

@@ -11,8 +11,12 @@ steps:
   - run:
       name: "Install tfenv"
       command: |
-        export tf_version=<<parameters.tf_version>>
         git clone https://github.com/tfutils/tfenv ~/.tfenv
+  - run:
+      name: "Install terraform cli"
+      command: |
+        export tf_version=<<parameters.tf_version>>
         export PATH="$HOME/.tfenv/bin:$PATH"
         tfenv install $tf_version
         tfenv use $tf_version
+        echo "Installed version: $(terraform --version)"
