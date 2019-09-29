@@ -1,18 +1,17 @@
-# tfutils-orb
-A CircleCI orb for utilities to set up and run tools for Terraform. e.g. terraform cli, tflint and so on.
+description: |
+  run terraform cli
 
-# Example
-```
-version: 2.1
+usage:
+  version: 2.1
 
-orbs:
+  orbs:
     tfutils: ukslee/tfutils@x.y.z
 
-jobs:
+  jobs:
     build:
-        docker:
+      docker:
         - image: your-image
-        steps:
+      steps:
         - checkout
         - tfutils/install
         - tfutils/terraform:
@@ -22,8 +21,7 @@ jobs:
         - tfutils/terraform:
             arguments: apply -var-file=foo
 
-workflows:
+  workflows:
     your-workflow:
-        jobs:
+      jobs:
         - build
-```
