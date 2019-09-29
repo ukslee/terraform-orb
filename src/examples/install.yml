@@ -7,7 +7,7 @@ usage:
   version: 2.1
 
   orbs:
-    futils: ukslee/tfutils@x.y.z
+    tfutils: ukslee/tfutils@x.y.z
 
   jobs:
     build:
@@ -15,7 +15,7 @@ usage:
         - image: your-image
       steps:
         - checkout
-        - futils/install
+        - tfutils/install
 
   workflows:
     your-workflow:
