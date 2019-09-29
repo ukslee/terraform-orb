@@ -1,0 +1,15 @@
+description: |
+  Execute terraform command with specified arguments
+
+parameters:
+  arguments:
+    type: string
+    description: Terraform command line arguments
+    default: ""
+
+steps:
+  - run:
+      name: "Run terraform command"
+      command: |
+        echo "run command: <<parameters.arguments>>"
+        terraform <<parameters.arguments>>
