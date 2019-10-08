@@ -6,11 +6,17 @@ parameters:
     type: string
     description: Terraform command line arguments
     default: ""
+  workdir:
+    type: string
+    description: workdir where the Terraform command run in
+    default: "./"
 
 steps:
   - run:
       name: "Run terraform command"
       command: |
         export PATH="$HOME/.tfenv/bin:$PATH"
+        echo "run path: <<parameters.workdir>>"
         echo "run command: terraform <<parameters.arguments>>"
+        cd <<parameters.workdir>>
         terraform <<parameters.arguments>>
