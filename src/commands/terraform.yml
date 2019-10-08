@@ -13,7 +13,7 @@ parameters:
 
 steps:
   - run:
-      name: "Run terraform command"
+      name: "Run terraform command: <<parameters.arguments>>"
       command: |
         export PATH="$HOME/.tfenv/bin:$PATH"
         echo "run path: <<parameters.workdir>>"
