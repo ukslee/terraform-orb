@@ -17,6 +17,10 @@ steps:
       command: |
         export tf_version=<<parameters.tf_version>>
         export PATH="$HOME/.tfenv/bin:$PATH"
-        tfenv install $tf_version
+        if [[ -d $HOME/.tfenv ]]; then
+          echo "$HOME/.tfenv folder exists. Skipping installation"
+        else
+          tfenv install $tf_version
+        fi
         tfenv use $tf_version
         echo "Installed version: $(terraform --version)"
