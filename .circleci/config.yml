@@ -134,6 +134,13 @@ jobs:
     executor: alpine
     steps:
       - checkout
+      - tfutils/install:
+          tf_version: "0.11.15"
+      - tfutils/terraform:
+          arguments: workspace list
+      - tfutils/install
+      - tfutils/terraform:
+          arguments: workspace list
       - tfutils/install
       - tfutils/terraform:
           arguments: workspace list
