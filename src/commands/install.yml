@@ -21,7 +21,7 @@ steps:
       command: |
         export tf_version=<<parameters.tf_version>>
         export PATH="$HOME/.tfenv/bin:$PATH"
-        if [ "$(tfenv list | grep $tf_version | wc -l)" -lt 0 ]; then
+        if [ "$(tfenv list | grep $tf_version | wc -l)" -lt 1 ]; then
           tfenv install $tf_version
         fi
         tfenv use $tf_version
