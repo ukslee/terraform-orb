@@ -1,4 +1,4 @@
-description: |
+description: >
   Execute terraform command with specified arguments
 
 parameters:
